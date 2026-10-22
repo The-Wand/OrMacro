@@ -1,21 +1,37 @@
 // swift-tools-version: 6.3
-// The swift-tools-version declares the minimum version of Swift required to build this package.
+///
+/// Copyright 2020 Aleksander Kozin
+///
+/// Licensed under the Apache License, Version 2.0 (the "License");
+/// you may not use this file except in compliance with the License.
+/// You may obtain a copy of the License at
+///
+///     http://www.apache.org/licenses/LICENSE-2.0
+///
+/// Unless required by applicable law or agreed to in writing, software
+/// distributed under the License is distributed on an "AS IS" BASIS,
+/// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+/// See the License for the specific language governing permissions and
+/// limitations under the License.
+///
+/// Created by Aleksander Kozin
+/// The Wand
 
 import PackageDescription
 import CompilerPluginSupport
 
 let package = Package(
-    name: "WMacro",
+    name: "OrMacro",
     platforms: [.macOS(.v10_15), .iOS(.v13), .tvOS(.v13), .watchOS(.v6), .macCatalyst(.v13)],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
-            name: "WMacro",
-            targets: ["WMacro"]
+            name: "OrMacro",
+            targets: ["OrMacro"]
         ),
         .executable(
-            name: "WMacroClient",
-            targets: ["WMacroClient"]
+            name: "OrMacroClient",
+            targets: ["OrMacroClient"]
         ),
     ],
     dependencies: [
@@ -26,7 +42,7 @@ let package = Package(
         // Targets can depend on other targets in this package and products from dependencies.
         // Macro implementation that performs the source transformation of a macro.
         .macro(
-            name: "WMacroMacros",
+            name: "OrMacroMacros",
             dependencies: [
                 .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
                 .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
@@ -34,16 +50,16 @@ let package = Package(
         ),
 
         // Library that exposes a macro as part of its API, which is used in client programs.
-        .target(name: "WMacro", dependencies: ["WMacroMacros"]),
+        .target(name: "OrMacro", dependencies: ["OrMacroMacros"]),
 
         // A client of the library, which is able to use the macro in its own code.
-        .executableTarget(name: "WMacroClient", dependencies: ["WMacro"]),
+        .executableTarget(name: "OrMacroClient", dependencies: ["OrMacro"]),
 
         // A test target used to develop the macro implementation.
         .testTarget(
-            name: "WMacroTests",
+            name: "OrMacroTests",
             dependencies: [
-                "WMacroMacros",
+                "OrMacroMacros",
                 .product(name: "SwiftSyntaxMacrosTestSupport", package: "swift-syntax"),
             ]
         ),
