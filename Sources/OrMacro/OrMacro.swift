@@ -27,3 +27,7 @@
 public
 macro om<T>(_ value: T) -> String = #externalMacro(module: "OrMacroMacros",
                                                    type: "OrMacro")
+@freestanding(expression)
+public
+macro om<T>(_ value: T) -> Int? = #externalMacro(module: "OrMacroMacros",
+                                                 type: "OrIntMacro")

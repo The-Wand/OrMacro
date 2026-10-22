@@ -41,11 +41,36 @@ struct OrMacro: ExpressionMacro {
     
 }
 
+import Foundation
+
+/// Implementation of the `om` macro
+public
+struct OrIntMacro: ExpressionMacro {
+    
+    @inline(__always)
+    public
+    static
+    func expansion(
+        of node: some FreestandingMacroExpansionSyntax,
+        in context: some MacroExpansionContext
+    ) -> ExprSyntax {
+        guard let argument = node.arguments.first?.expression else {
+            fatalError("any arguments?")
+        }
+        
+        let string = argument.description
+        
+        return "\(literal: Int(string) ?? Int(String(string.unicodeScalars.filter(CharacterSet.decimalDigits.contains))))"
+    }
+    
+}
+
 @main
 struct OrMacroPlugin: CompilerPlugin {
     
     let providingMacros: [Macro.Type] = [
         OrMacro.self,
+        OrIntMacro.self,
     ]
     
 }
