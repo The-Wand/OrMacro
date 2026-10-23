@@ -1,0 +1,27 @@
+{
+  "configurations" : [
+    {
+      "id" : "A8160D3E-0033-404B-BFE2-3500717EB28B",
+      "name" : "Configuration 1",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+
+  },
+  "testTargets" : [
+    {
+      "selectedTests" : [
+        "OrMacroTests\/testOrMacro()"
+      ],
+      "target" : {
+        "containerPath" : "container:",
+        "identifier" : "OrMacroTests",
+        "name" : "OrMacroTests"
+      }
+    }
+  ],
+  "version" : 1
+}

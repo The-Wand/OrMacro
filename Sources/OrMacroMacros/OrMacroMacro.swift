@@ -21,56 +21,63 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 
-/// Implementation of the `om` macro
-public
-struct OrMacro: ExpressionMacro {
-    
-    @inline(__always)
-    public
-    static
-    func expansion(
-        of node: some FreestandingMacroExpansionSyntax,
-        in context: some MacroExpansionContext
-    ) -> ExprSyntax {
-        guard let argument = node.arguments.first?.expression else {
-            fatalError("any arguments?")
-        }
-        
-        return "\(literal: argument.description)"
-    }
-    
-}
-
 import Foundation
-
-/// Implementation of the `om` macro
-public
-struct OrIntMacro: ExpressionMacro {
-    
-    @inline(__always)
-    public
-    static
-    func expansion(
-        of node: some FreestandingMacroExpansionSyntax,
-        in context: some MacroExpansionContext
-    ) -> ExprSyntax {
-        guard let argument = node.arguments.first?.expression else {
-            fatalError("any arguments?")
-        }
-        
-        let string = argument.description
-        
-        return "\(literal: Int(string) ?? Int(String(string.unicodeScalars.filter(CharacterSet.decimalDigits.contains))))"
-    }
-    
-}
 
 @main
 struct OrMacroPlugin: CompilerPlugin {
-    
+
     let providingMacros: [Macro.Type] = [
-        OrMacro.self,
         OrIntMacro.self,
+        OrStringMacro.self
     ]
+
+}
+
+public
+class OrMacro: ExpressionMacro {
+    
+    @inline(__always)
+    public
+    class
+    func expansion(
+        of node: some FreestandingMacroExpansionSyntax,
+        in context: some MacroExpansionContext
+    ) -> ExprSyntax {
+        guard let argument = node.arguments.first?.expression else {
+            fatalError("any arguments?")
+        }
+        
+        //TODO: Extract return type from `context`
+        return "\(literal: result(from: argument.description))"
+    }
+    
+    class
+    func result(from: String) -> any ExpressibleByLiteralSyntax {
+        fatalError()
+    }
+    
+}
+
+final
+public
+class OrIntMacro: OrMacro {
+    
+    class
+    override
+    func result(from: String) -> any ExpressibleByLiteralSyntax {
+        from| as Int?
+    }
+    
+}
+
+final
+public
+class OrStringMacro: OrMacro {
+    
+    class
+    override
+    func result(from: String) -> any ExpressibleByLiteralSyntax {
+        from
+    }
     
 }
