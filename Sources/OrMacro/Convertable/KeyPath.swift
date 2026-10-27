@@ -16,8 +16,7 @@
 /// Created by Aleksander Kozin
 /// The Wand
 
-@_exported
-import Convertable
+postfix operator |
 
 extension KeyPath {
     
