@@ -4,4 +4,4 @@ let result:     String = #om(\String.count)
 print(result)
 
 let resultInt:  Int? = #om("8joijiojioj99")
-print(resultInt)
+print(resultInt as Any)
