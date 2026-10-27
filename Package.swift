@@ -62,7 +62,8 @@ let package = Package(
                 "OrMacroMacros",
                 .product(name: "SwiftSyntaxMacrosTestSupport",
                          package: "swift-syntax"),
-            ]
+            ],
+            path: "Tests"
         ),
     ],
     swiftLanguageModes: [.v5]
