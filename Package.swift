@@ -41,17 +41,21 @@ let package = Package(
     dependencies: [
         .package(url: "https://github.com/swiftlang/swift-syntax.git",
                  from: "603.0.0-latest"),
+        .package(url: "https://github.com/the-wand/Convertable.git",
+                 from: "0.0.1"),
     ],
     targets: [
         .macro(
             name: "OrMacroMacros",
-            dependencies: [
-                .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
-                .product(name: "SwiftCompilerPlugin", package: "swift-syntax")
-            ]
+            dependencies:
+                [
+                    .product(name: "SwiftSyntaxMacros", package: "swift-syntax"),
+                    .product(name: "SwiftCompilerPlugin", package: "swift-syntax"),
+                    "Convertable",
+                ]
         ),
         .target(name: "OrMacro", dependencies: ["OrMacroMacros"]),
-        .executableTarget(name: "OrMacroClient", dependencies: ["OrMacro"]),
+        .executableTarget(name: "OrMacroClient", dependencies: ["OrMacroMacros"]),
         .testTarget(
             name: "OrMacroTests",
             dependencies: [

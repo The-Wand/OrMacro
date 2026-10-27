@@ -16,12 +16,14 @@
 /// Created by Aleksander Kozin
 /// The Wand
 
+import Foundation
+
 import SwiftCompilerPlugin
 import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 
-import Foundation
+import Convertable
 
 @main
 struct OrMacroPlugin: CompilerPlugin {

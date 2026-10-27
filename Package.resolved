@@ -1,6 +1,15 @@
 {
-  "originHash" : "a79637e4e736508d1888876e188d9c260ef436e489123852fd8be49e46c6af70",
+  "originHash" : "b5cc53cb861b7bbac4bd71fd195cd19b82b2b0bb1304bcf0f92c740994d83371",
   "pins" : [
+    {
+      "identity" : "convertable",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/the-wand/Convertable.git",
+      "state" : {
+        "revision" : "1436d1ee986adb6ea491136af62128239bd76671",
+        "version" : "0.0.1"
+      }
+    },
     {
       "identity" : "swift-syntax",
       "kind" : "remoteSourceControl",
