@@ -16,6 +16,8 @@
 /// Created by Aleksander Kozin
 /// The Wand
 
+import Convertable
+
 extension KeyPath {
     
     @inline(__always)
@@ -24,7 +26,6 @@ extension KeyPath {
     static
     func |(path: KeyPath) -> String {
         #om(path)
-//        "\(path)".components(separatedBy: ".").last ?? ""
     }
     
 }
