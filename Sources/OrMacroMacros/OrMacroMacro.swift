@@ -23,6 +23,7 @@ import SwiftSyntax
 import SwiftSyntaxBuilder
 import SwiftSyntaxMacros
 
+@_exported
 import Convertable
 
 @main

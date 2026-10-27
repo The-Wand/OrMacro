@@ -16,6 +16,7 @@
 /// Created by Aleksander Kozin
 /// The Wand
 
+@_exported
 import Convertable
 
 extension KeyPath {
