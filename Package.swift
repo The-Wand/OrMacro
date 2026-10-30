@@ -1,4 +1,4 @@
-// swift-tools-version: 6.3
+// swift-tools-version: 5.9
 ///
 /// Copyright 2020 Aleksander Kozin
 ///
@@ -22,12 +22,15 @@ import CompilerPluginSupport
 
 let package = Package(
     name: "OrMacro",
+    
     platforms: [
-        .macOS(.v10_15),
-        .iOS(.v12),
-        .tvOS(.v12),
-        .watchOS(.v6),
-        .macCatalyst(.v15)],
+        .iOS(.v14),
+        .macOS(.v12),
+        .tvOS(.v14),
+//        .visionOS(.v1),
+        .watchOS(.v7),
+    ],
+    
     products: [
         .library(
             name: "OrMacro",
@@ -38,12 +41,14 @@ let package = Package(
             targets: ["OrMacroClient"]
         ),
     ],
+    
     dependencies: [
         .package(url: "https://github.com/swiftlang/swift-syntax.git",
                  from: "603.0.0-latest"),
         .package(url: "https://github.com/the-wand/Convertable.git",
-                 from: "0.0.1"),
+                 from: "0.0.3"),
     ],
+    
     targets: [
         .macro(
             name: "OrMacroMacros",
@@ -66,5 +71,6 @@ let package = Package(
             path: "Tests"
         ),
     ],
-    swiftLanguageModes: [.v5]
+    
+    swiftLanguageVersions: [.v5]
 )

@@ -17,6 +17,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "OrMacro"
                BuildableName = "OrMacro"
+               BlueprintName = "OrMacro"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,6 +31,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "OrMacroClient"
                BuildableName = "OrMacroClient"
+               BlueprintName = "OrMacroClient"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -53,6 +55,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "OrMacroTests"
                BuildableName = "OrMacroTests"
+               BlueprintName = "OrMacroTests"
                ReferencedContainer = "container:">
             </BuildableReference>
          </TestableReference>
@@ -74,6 +77,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "OrMacroClient"
             BuildableName = "OrMacroClient"
+            BlueprintName = "OrMacroClient"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>
@@ -89,6 +93,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "OrMacroClient"
             BuildableName = "OrMacroClient"
+            BlueprintName = "OrMacroClient"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>

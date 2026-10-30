@@ -1,13 +1,12 @@
 {
-  "originHash" : "b5cc53cb861b7bbac4bd71fd195cd19b82b2b0bb1304bcf0f92c740994d83371",
   "pins" : [
     {
       "identity" : "convertable",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/the-wand/Convertable.git",
       "state" : {
-        "revision" : "1436d1ee986adb6ea491136af62128239bd76671",
-        "version" : "0.0.1"
+        "revision" : "21d3424542c99cc08d6b5e5079c43c885f74ebfb",
+        "version" : "0.0.3"
       }
     },
     {
@@ -20,5 +19,5 @@
       }
     }
   ],
-  "version" : 3
+  "version" : 2
 }

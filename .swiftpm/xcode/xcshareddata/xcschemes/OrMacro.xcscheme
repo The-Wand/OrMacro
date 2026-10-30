@@ -17,6 +17,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "OrMacro"
                BuildableName = "OrMacro"
+               BlueprintName = "OrMacro"
                ReferencedContainer = "container:">
             </BuildableReference>
          </BuildActionEntry>
@@ -52,6 +53,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "OrMacro"
             BuildableName = "OrMacro"
+            BlueprintName = "OrMacro"
             ReferencedContainer = "container:">
          </BuildableReference>
       </MacroExpansion>
